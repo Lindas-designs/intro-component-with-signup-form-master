@@ -1,0 +1,73 @@
+:root {
+  /* Primary colors */
+  --red-400: hsl(0, 100%, 74%);
+  --green-400: hsl(154, 59%, 51%);
+  /* Accent */
+  --purple-700: hsl(248, 32%, 49%);
+  /* Neutral */
+  --gray-900: hsl(249, 10%, 26%);
+  --purple-350: hsl(246, 25%, 77%);
+}
+/* Font weights: 400, 500, 600, 700 */
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--red-400);
+  background-image: url(images/bg-intro-desktop.png);
+  margin: 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.content {
+  width: 70%;
+  display: flex;
+  color: white;
+  gap: 4rem;
+}
+h1 {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 4.5rem;
+}
+p {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+Your users should be able to:
+
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Receive an error message when the `form` is submitted if:
+  - Any `input` field is empty. The message for this error should say _"[Field Name] cannot be empty"_
+  - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say _"Looks like this is not an email"_*/
+
+/* 
+  1.Html labajai, kreisajai pusei, background image
+  2.Papildināts html labajai pusei
+  3.Css
+  4.Hover states
+  5.JS */
