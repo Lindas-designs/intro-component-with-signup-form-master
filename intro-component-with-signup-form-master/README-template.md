@@ -1,20 +1,26 @@
 # Frontend Mentor - Intro component with sign up form solution
 
-This is a solution to the [Intro component with sign up form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Intro component with sign up form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Frontend Mentor - Intro component with sign up form solution](#frontend-mentor---intro-component-with-sign-up-form-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Creating equal width flexbox items](#creating-equal-width-flexbox-items)
+    - [Creating shadow only under button element](#creating-shadow-only-under-button-element)
+    - [Styling button states](#styling-button-states)
+    - [Creating 3D button effect](#creating-3d-button-effect)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
+  - [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -27,8 +33,8 @@ Users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 - Receive an error message when the `form` is submitted if:
-  - Any `input` field is empty. The message for this error should say *"[Field Name] cannot be empty"*
-  - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say *"Looks like this is not an email"*
+  - Any `input` field is empty. The message for this error should say _"[Field Name] cannot be empty"_
+  - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say _"Looks like this is not an email"_
 
 ### Screenshot
 
@@ -36,7 +42,7 @@ Users should be able to:
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
@@ -64,22 +70,102 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+### Creating equal width flexbox items
+
+Using flex:1 on a flexbox item, which means that the flex item will grow to fill the available space in its flex container, sharing that space equally with other flex items that also have a value of 1.
+
+### Creating shadow only under button element
+
+To do this, set the spread(4th value) to the negative of blur (3rd value).
+
+```css
+.try {
+  box-shadow: 0rem 1.5rem 0.5rem -1rem var(--gray-900);
+  /* Value meaning (in order of appearance) -horizontal offset,vertical offset, blur, spread, color.
+ */
+}
+```
+
+### Styling button states
+
+Default
+Hover
+Active (pressed)
+Focused
+
+1. Default state
+   Full color background
+   Clear,readable label
+
+```css
+.try {
+  box-shadow: 0rem 1.5rem 0.5rem -1rem var(--gray-900);
+  /* Adding slight shadow at the bottom for more 3D effect */
+}
+```
+
+2.  Hover state
+    Color darkening or lightening
+    Subtle drop shadow or elevation
+    Slight size change or border highlight
+
+    I USED BOX SHADOW AROUND BUTTON ON HOVER
+
+```css
+.try:hover {
+  box-shadow: 0rem 0rem 1.5rem var(--gray-900);
+}
+```
+
+3.  Active (pressed) state
+    Slight "inset" look (button appears pressed in)
+    Deeper color tone or shadow compression
+    Smaller font size
+
+```css
+.try:active {
+  transform: scale(0.98);
+  background-color: var(--purple-350);
+  font-size: 1.3rem;
+}
+```
+
+4.Focused state
+High-contrast outline or glow
+
+```css
+.try:focus {
+  outline: none;
+  box-shadow: 0rem 0rem 0.5rem 0.5rem var(--gray-900);
+}
+```
+
+### Creating 3D button effect
+
+Adding a very thin highlight inside a button on the bottom horizont.
+
+```css
+.claim {
+  box-shadow: inset 0rem -0.5rem 0.5rem var(--purple-350);
+}
+```
 
 To see how you can add code snippets, see below:
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
+
 ```js
 const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  console.log("🎉");
+};
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
