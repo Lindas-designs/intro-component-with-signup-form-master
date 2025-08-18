@@ -67,6 +67,20 @@ h2 {
   padding: 3rem;
   border-radius: 0.75rem;
 }
+.err-border {
+  border: 0.2rem solid var(--red-400);
+}
+.empty-box {
+  color: black;
+  text-align: end;
+  color: var(--red-400);
+  font-weight: 500;
+  font-style: italic;
+  padding-bottom: 0.75rem;
+}
+.closed {
+  display: none;
+}
 .btn {
   height: 5rem;
   border-radius: 1rem;
@@ -105,7 +119,17 @@ h2 {
 .bold {
   font-weight: 600;
 }
+.form-row {
+  position: relative;
+}
+img {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
 input {
+  width: 100%;
   height: 5rem;
   margin: 0.8rem 0;
   padding-left: 2rem;
@@ -117,6 +141,11 @@ input {
 input:focus {
   outline: none;
   border: 0.1rem solid var(--gray-900);
+}
+
+img {
+  height: 2rem;
+  width: 2rem;
 }
 .claim {
   background-color: var(--green-400);
@@ -163,4 +192,6 @@ Your users should be able to:
  When form is submitted:
  1.Check if any input field is empty - if yes, add error message - "[Field Name] cannot be empty";
  2.Check if the e-mail address is formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say _"Looks like this is not an email"_
- 3.If there are no problems submit a form by clearing all fields and error messages.  */
+ 3.If there are no problems submit a form by clearing all fields and error messages.
+ 
+ Adding media queries*/

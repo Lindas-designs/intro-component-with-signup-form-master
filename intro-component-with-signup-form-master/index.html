@@ -38,10 +38,29 @@
             thereafter
           </button>
           <form class="form" action="#">
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-            <input type="email" placeholder="Email Address" />
-            <input type="text" placeholder="Password" />
+            <div class="form-row">
+              <input type="text" placeholder="First Name" />
+              <img class="closed" src="images/icon-error.svg" />
+            </div>
+            <label class="empty-box closed">First Name cannot be empty</label>
+            <div class="form-row">
+              <input type="text" placeholder="Last Name" />
+              <img class="closed" src="images/icon-error.svg" />
+            </div>
+            <label class="empty-box closed">Last Name cannot be empty</label>
+            <div class="form-row">
+              <input type="email" placeholder="Email Address" />
+              <img class="closed" src="images/icon-error.svg" />
+            </div>
+            <label class="empty-box closed"
+              >Looks like this is not an email</label
+            >
+            <div class="form-row">
+              <input type="text" placeholder="Password" />
+              <img class="closed" src="images/icon-error.svg" />
+            </div>
+            <label class="empty-box closed">Password cannot be empty</label>
+
             <button class="btn claim">Claim your free trial</button>
             <h2>
               By clicking the button, you are agreeing to our
@@ -59,5 +78,6 @@
         >. Coded by <a href="#">Linda</a>.
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
