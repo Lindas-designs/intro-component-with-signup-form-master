@@ -18,6 +18,7 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
     - [Styling button states](#styling-button-states)
     - [Creating 3D button effect](#creating-3d-button-effect)
     - [Checking email address](#checking-email-address)
+    - [Checking if condition is true for multiple array elements - every method](#checking-if-condition-is-true-for-multiple-array-elements---every-method)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -163,6 +164,15 @@ function checkEmailAddress(email_address) {
   return result;
   // this will return true if email address format is correct and false if not.
 }
+```
+
+### Checking if condition is true for multiple array elements - every method
+
+```js
+let allValid = Array.from(inputs).every(
+  (input) => !(input.value.trim().length === 0)
+);
+//allValid will be true only if in each array iteration result is true
 ```
 
 ### Continued development
