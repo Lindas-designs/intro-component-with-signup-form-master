@@ -17,6 +17,7 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
     - [Creating shadow only under button element](#creating-shadow-only-under-button-element)
     - [Styling button states](#styling-button-states)
     - [Creating 3D button effect](#creating-3d-button-effect)
+    - [Checking email address](#checking-email-address)
     - [Continued development](#continued-development)
     - [Useful resources](#useful-resources)
   - [Author](#author)
@@ -150,27 +151,19 @@ Adding a very thin highlight inside a button on the bottom horizont.
 }
 ```
 
-To see how you can add code snippets, see below:
+### Checking email address
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+To check if email address follows the format `name@host.tld` following code can be used:
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+let pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+function checkEmailAddress(email_address) {
+  let result = pattern.test(email_address);
+  return result;
+  // this will return true if email address format is correct and false if not.
+}
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 

@@ -49,10 +49,14 @@
             </div>
             <label class="empty-box closed">Last Name cannot be empty</label>
             <div class="form-row">
-              <input type="email" placeholder="Email Address" />
-              <img class="closed" src="images/icon-error.svg" />
+              <input id="email" type="email" placeholder="Email Address" />
+              <img
+                id="email-err-img"
+                class="closed"
+                src="images/icon-error.svg"
+              />
             </div>
-            <label class="empty-box closed"
+            <label id="email-err" class="empty-box closed"
               >Looks like this is not an email</label
             >
             <div class="form-row">

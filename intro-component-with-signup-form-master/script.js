@@ -3,6 +3,18 @@ const btnClaim = document.querySelector(".claim");
 const inputs = document.querySelectorAll("input");
 const labels = document.querySelectorAll("label");
 const errImages = document.querySelectorAll("img");
+const email = document.getElementById("email");
+const emailErr = document.getElementById("email-err");
+const emailErrImg = document.getElementById("email-err-img");
+
+let pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+
+function checkEmailAddress(email_address) {
+  let result = pattern.test(email_address);
+  return result;
+  // this will return true if email address format is correct and false if not.
+}
+
 btnClaim.addEventListener("click", function (e) {
   e.preventDefault();
 
@@ -10,6 +22,8 @@ btnClaim.addEventListener("click", function (e) {
     input.classList.remove("err-border");
     labels[index].classList.add("closed");
     errImages[index].classList.add("closed");
+    emailErr.classList.add("closed");
+    emailErrImg.classList.add("closed");
 
     if (input.value.trim().length === 0) {
       input.classList.add("err-border");
@@ -17,4 +31,20 @@ btnClaim.addEventListener("click", function (e) {
       errImages[index].classList.remove("closed");
     }
   });
+  if (!checkEmailAddress(email.value)) {
+    emailErr.classList.remove("closed");
+    emailErrImg.classList.remove("closed");
+    email.classList.add("err-border");
+    email.value = "email@example.com";
+    email.style.color = "var(--red-400)";
+  } else {
+    email.style.color = "var(--gray-900)";
+  }
+  //Simulating form submission - clearing input fields
+  let allValid = Array.from(inputs).every(
+    (input) => !(input.value.trim().length === 0)
+  );
+  if (allValid && checkEmailAddress(email.value)) {
+    inputs.forEach((input) => (input.value = ""));
+  }
 });
