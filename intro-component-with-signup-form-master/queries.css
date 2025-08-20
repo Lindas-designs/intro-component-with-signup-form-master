@@ -1,0 +1,23 @@
+@media (max-width: 60em) {
+  html {
+    font-size: 55%;
+  }
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+  h1 {
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 4rem;
+    padding-bottom: 2rem;
+  }
+}
+@media (max-width: 28em) {
+  .try {
+    height: 8rem;
+  }
+  br {
+    display: block;
+  }
+}

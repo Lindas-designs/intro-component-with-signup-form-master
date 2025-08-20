@@ -6,6 +6,7 @@ const errImages = document.querySelectorAll("img");
 const email = document.getElementById("email");
 const emailErr = document.getElementById("email-err");
 const emailErrImg = document.getElementById("email-err-img");
+const emailErrEmpty = document.getElementById("email-err-empty");
 
 const allPlaceholders = Array.from(inputs).map((input) => input.placeholder);
 console.log(allPlaceholders);
@@ -27,28 +28,29 @@ btnClaim.addEventListener("click", function (e) {
     labels[index].classList.add("closed");
     errImages[index].classList.add("closed");
     emailErr.classList.add("closed");
-    emailErrImg.classList.add("closed");
     input.placeholder = allPlaceholders[index];
 
     if (input.value.trim().length === 0) {
       input.classList.add("err-border");
       labels[index].classList.remove("closed");
       errImages[index].classList.remove("closed");
+      emailErrImg.classList.remove("closed");
+
       input.placeholder = "";
     }
   });
 
   //Checking email address format
-  if (!checkEmailAddress(email.value)) {
+  if (email.value.length > 0 && !checkEmailAddress(email.value)) {
+    emailErrEmpty.classList.add("closed");
     emailErr.classList.remove("closed");
     emailErrImg.classList.remove("closed");
     email.classList.add("err-border");
     email.value = "";
     email.placeholder = "email@example.com";
-
     email.classList.add("red");
-  } else {
-    email.classList.add("grey");
+  } else if (checkEmailAddress(email.value)) {
+    emailErrImg.classList.add("closed");
   }
   //Simulating form submission - clearing input fields
   let allValid = Array.from(inputs).every(

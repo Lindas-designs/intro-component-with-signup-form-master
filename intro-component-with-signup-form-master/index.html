@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
 
     <title>Frontend Mentor | Intro component with sign up form</title>
   </head>
@@ -34,8 +35,8 @@
         </div>
         <div class="right-side">
           <button class="btn try">
-            <span class="bold"> Try it free 7 days </span>then $20/mo.
-            thereafter
+            <span class="bold"> Try it free 7 days </span>then<br />
+            $20/mo. thereafter
           </button>
           <form class="form" action="#">
             <div class="form-row">
@@ -56,9 +57,13 @@
                 src="images/icon-error.svg"
               />
             </div>
-            <label id="email-err" class="empty-box closed"
-              >Looks like this is not an email</label
+            <span id="email-err" class="empty-box closed"
+              >Looks like this is not an email</span
             >
+            <label id="email-err-empty" class="empty-box closed"
+              >Email cannot be empty</label
+            >
+
             <div class="form-row">
               <input type="text" placeholder="Password" />
               <img class="closed" src="images/icon-error.svg" />

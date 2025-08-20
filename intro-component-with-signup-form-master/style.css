@@ -119,6 +119,9 @@ h2 {
 .bold {
   font-weight: 600;
 }
+br {
+  display: none;
+}
 .form-row {
   position: relative;
 }
@@ -180,25 +183,3 @@ footer {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-
-/* The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-Your users should be able to:
-
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Receive an error message when the `form` is submitted if:
-  - Any `input` field is empty. The message for this error should say _"[Field Name] cannot be empty"_
-  - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say _"Looks like this is not an email"_*/
-
-/* 
- JS:
- When form is submitted:
- 1.Check if any input field is empty - if yes, add error message - "[Field Name] cannot be empty";
- 2.Check if the e-mail address is formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say _"Looks like this is not an email"_
- 3.If there are no problems submit a form by clearing all fields and error messages.
- 
- Adding media queries*/
